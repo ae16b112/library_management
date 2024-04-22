@@ -31,3 +31,5 @@ Library management
     2. Return - [POST] http://localhost:8000/book_return
     3. Reserve -  [POST] http://localhost:8000/reserve
     4. Fulfill - [POST] http://localhost:8000/fulfillment
+
+NOTE: I have committed env just so that it will be quickier to run in local. But in real scenaries/actuall app we do not commit env (which contains packages)
