@@ -23,6 +23,11 @@ class ReservationsAPITest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         
     def test_reserve_book(self):
+        url = reverse('reserve')
+        data={'book_id':self.book.book_id, 'member_id': self.member.member_id}
+        response=self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        
         self.book.available_copies +=1
         self.book.save()
         url = reverse('fulfillment')

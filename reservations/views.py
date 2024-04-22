@@ -33,6 +33,8 @@ def fulfillment(request):
     
     try:
         reservations = Reservations.objects.filter(book_id=book_id, member_id=member_id)
+        if not reservations.exists():
+            return Response({"error":"Reservation not found"}, status=400)
     except Reservations.DoesNotExist:
         return Response({"error":"Reservation not found"}, status=400)
     

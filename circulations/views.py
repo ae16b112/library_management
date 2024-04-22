@@ -35,7 +35,9 @@ def book_return(request):
     
     try:
         circulations = Circulations.objects.filter(book_id=book_id, member_id=member_id, is_returned=False).order_by("-checkout_timestamp")
-        print("circulations: ",circulations)
+        if not circulations.exists():
+            return Response({"error":"Book not found or not checkoed out"}, status=400)
+        
     except Circulations.DoesNotExist:
         return Response({"error":"Book not found or not checkoed out"}, status=400)
     

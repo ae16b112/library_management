@@ -20,6 +20,11 @@ class CirculationsAPITest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         
     def test_return_book(self):
+        url = reverse('checkout')
+        data={'book_id':self.book.book_id, 'member_id': self.member.member_id}
+        response=self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        
         url=reverse('book_return')
         data={'book_id':self.book.book_id, 'member_id': self.member.member_id}
         response=self.client.post(url, data)
