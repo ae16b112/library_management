@@ -24,8 +24,8 @@ Library management
 1. **Testing**
     
     Please simulate the below events
-    
-    1. Checkout
-    2. Return
-    3. Reserve
-    4. Fulfill (Process reservation queue)
+    data = {"member_id":<member_id>, "book_id":<book_id>}    
+    1. Checkout - [POST] http://localhost:8000/checkout     
+    2. Return - [POST] http://localhost:8000/book_return
+    3. Reserve -  [POST] http://localhost:8000/reserve
+    4. Fulfill - [POST] http://localhost:8000/fulfillment
