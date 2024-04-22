@@ -21,9 +21,11 @@ Library management
     - **Implement simple/composite indexes on the database columns that help in optimizing the queries for the above APIs.**
 - *Caching*
     - **Implement your own caching strategy to avoid unnecessary network calls**
-1. **Testing**
+ 
+
+3. **Endpoints created for above**
     
-    Please simulate the below events
+    
     data = {"member_id":<member_id>, "book_id":<book_id>}    
     1. Checkout - [POST] http://localhost:8000/checkout     
     2. Return - [POST] http://localhost:8000/book_return
